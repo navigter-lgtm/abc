@@ -8,7 +8,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '45 */1 * * *'
+    - cron: '45 */2 * * *'
   workflow_dispatch:
 
 jobs:
@@ -59,7 +59,7 @@ jobs:
       id: update_time
       run: |
         CURRENT_TIME=$(date +%s%3N)
-        echo "{"lastActive": "$CURRENT_TIME"}" > asitha2.json
+        echo "{\"lastActive\": \"$CURRENT_TIME\"}" > asitha2.json
         
     - name: Setup Git User
       run: |
